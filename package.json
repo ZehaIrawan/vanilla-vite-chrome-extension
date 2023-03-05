@@ -1,0 +1,15 @@
+{
+  "name": "dashvite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build-extension": "yarn build && cp src/manifest.json dist/"
+  },
+  "devDependencies": {
+    "vite": "^4.1.0"
+  }
+}

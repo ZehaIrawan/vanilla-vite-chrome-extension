@@ -1,17 +1,17 @@
 import './style.css'
-import { setupCounter } from './counter.js'
 import { setupChain } from './chain.js'
 // import data from './data.json'
 
 
 // console.log(data,'data')
+const date = new Date
 
 document.querySelector('#app').innerHTML = `
-  <button id="counter" type="button"></button>
+  <h1>Jobmate</h1>
+  <div>${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}</div>
   <div id="chain"></div>
 `
 
-setupCounter(document.querySelector('#counter'))
 
 function formatDate(date){
   var dd = date.getDate();
@@ -19,7 +19,8 @@ function formatDate(date){
   var yyyy = date.getFullYear();
   if(dd<10) {dd='0'+dd}
   if(mm<10) {mm='0'+mm}
-  date = dd+'/'+mm+'/'+yyyy;
+  // date = dd+'/'+mm+'/'+yyyy;
+  date = dd;
   return date
 }
 
@@ -31,7 +32,7 @@ function Last7Days () {
       result.push(formatDate(d) )
   }
 
-  return result
+  return result.reverse()
 }
 
 setupChain(document.querySelector('#chain'),Last7Days())

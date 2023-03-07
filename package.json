@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "build-extension": "yarn build && cp src/manifest.json dist/"
+    "build-extension": "yarn build && cp src/manifest.json dist/ &&  cp src/background.js dist/"
   },
   "devDependencies": {
     "vite": "^4.1.0"

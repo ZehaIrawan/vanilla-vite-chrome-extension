@@ -1,24 +1,22 @@
 export const setupChain = (element, dates) => {
 
 
-  dates.forEach((date, index) => {
+  dates.forEach((date) => {
     const container = document.createElement("div");
-    container.classList = 'link-container'
+   
     element.appendChild(container);
     const div = document.createElement("div");
     div.classList = 'circle'
 
-    if(dates.length-1 === index || dates.length-2 === index) {
+    if(date.active) {
       div.classList.add('active')
       container.classList = 'link-container-active'
+    } else{
+      container.classList = 'link-container'
     }
 
-    div.innerHTML = date
+    div.innerHTML = date.day
     container.appendChild(div);
-    // 
-    // const span = document.createElement("span");
-    // span.innerText = date;
-    // container.appendChild(span);
   });
 
 };

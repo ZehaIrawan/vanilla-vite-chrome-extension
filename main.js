@@ -4,6 +4,8 @@ import thisweekData from './thisweek.json'
 
 const abc = thisweekData.filter((item) => {return item.tags.includes('Finitive')})
 
+console.log(abc,'abc')
+
 const date = new Date
 
 document.querySelector('#app').innerHTML = `
